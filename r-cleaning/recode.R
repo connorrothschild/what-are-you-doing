@@ -736,4 +736,8 @@ return(paste("Hmm, are you", top_activity, "?"))
 
 proof_of_concept("White only", "Male", "Never married", "18 to 22", 14)
 
-write.csv(long_data, "longdata.csv")
+activity_data <- long_data %>%
+  group_by(race_general, sex, marriage, age_cat, hour, activity_general, activity_specific) %>% 
+  count(activity_general, activity_specific)
+
+write.csv(activity_data, "../data/activitydata.csv")
