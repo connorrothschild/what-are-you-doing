@@ -594,7 +594,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (76:1) {#each raceOptions as raceOption}
+    // (77:1) {#each raceOptions as raceOption}
     function create_each_block_1(ctx) {
     	let option;
     	let t_value = /*raceOption*/ ctx[22] + "";
@@ -607,7 +607,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*raceOption*/ ctx[22];
     			option.value = option.__value;
-    			add_location(option, file$1, 76, 2, 1460);
+    			add_location(option, file$1, 77, 2, 1461);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -623,14 +623,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(76:1) {#each raceOptions as raceOption}",
+    		source: "(77:1) {#each raceOptions as raceOption}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (82:1) {#each sexOptions as sexOption}
+    // (83:1) {#each sexOptions as sexOption}
     function create_each_block(ctx) {
     	let option;
     	let t_value = /*sexOption*/ ctx[19] + "";
@@ -643,7 +643,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*sexOption*/ ctx[19];
     			option.value = option.__value;
-    			add_location(option, file$1, 82, 2, 1591);
+    			add_location(option, file$1, 83, 2, 1592);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -659,14 +659,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(82:1) {#each sexOptions as sexOption}",
+    		source: "(83:1) {#each sexOptions as sexOption}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (97:0) {#if visible}
+    // (98:0) {#if visible}
     function create_if_block(ctx) {
     	let current;
 
@@ -713,14 +713,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(97:0) {#if visible}",
+    		source: "(98:0) {#if visible}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (98:0) <Box>
+    // (99:0) <Box>
     function create_default_slot(ctx) {
     	let h2;
 
@@ -808,20 +808,20 @@ var app = (function () {
     			br1 = element("br");
     			t24 = space();
     			t25 = text(t25_value);
-    			add_location(h2, file$1, 98, 1, 1896);
-    			add_location(strong0, file$1, 103, 24, 2152);
-    			add_location(p0, file$1, 102, 1, 2124);
-    			add_location(strong1, file$1, 107, 2, 2275);
-    			add_location(p1, file$1, 105, 1, 2212);
-    			add_location(p2, file$1, 111, 1, 2333);
+    			add_location(h2, file$1, 99, 1, 1897);
+    			add_location(strong0, file$1, 104, 24, 2153);
+    			add_location(p0, file$1, 103, 1, 2125);
+    			add_location(strong1, file$1, 108, 2, 2276);
+    			add_location(p1, file$1, 106, 1, 2213);
+    			add_location(p2, file$1, 112, 1, 2334);
     			attr_dev(button0, "class", "svelte-6xtft0");
     			toggle_class(button0, "active", /*status*/ ctx[4] === "Yes 🤠");
-    			add_location(button0, file$1, 114, 1, 2366);
+    			add_location(button0, file$1, 115, 1, 2367);
     			attr_dev(button1, "class", "svelte-6xtft0");
     			toggle_class(button1, "active", /*status*/ ctx[4] === "No 😔");
-    			add_location(button1, file$1, 118, 1, 2470);
-    			add_location(br0, file$1, 122, 1, 2571);
-    			add_location(br1, file$1, 122, 5, 2575);
+    			add_location(button1, file$1, 119, 1, 2471);
+    			add_location(br0, file$1, 123, 1, 2572);
+    			add_location(br1, file$1, 123, 5, 2576);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -920,7 +920,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(98:0) <Box>",
+    		source: "(99:0) <Box>",
     		ctx
     	});
 
@@ -1010,25 +1010,25 @@ var app = (function () {
     			t9 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
-    			add_location(br0, file$1, 67, 0, 1319);
-    			add_location(br1, file$1, 67, 4, 1323);
+    			add_location(br0, file$1, 68, 0, 1320);
+    			add_location(br1, file$1, 68, 4, 1324);
     			attr_dev(input0, "type", "text");
-    			add_location(input0, file$1, 70, 0, 1340);
-    			add_location(br2, file$1, 73, 0, 1391);
+    			add_location(input0, file$1, 71, 0, 1341);
+    			add_location(br2, file$1, 74, 0, 1392);
     			if (/*race*/ ctx[1] === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[14].call(select0));
-    			add_location(select0, file$1, 74, 0, 1396);
+    			add_location(select0, file$1, 75, 0, 1397);
     			if (/*sex*/ ctx[2] === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[15].call(select1));
-    			add_location(select1, file$1, 80, 0, 1530);
+    			add_location(select1, file$1, 81, 0, 1531);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "min", "0");
     			attr_dev(input1, "max", "100");
-    			add_location(input1, file$1, 86, 0, 1664);
-    			add_location(br3, file$1, 88, 0, 1726);
-    			add_location(br4, file$1, 88, 4, 1730);
-    			add_location(strong, file$1, 92, 1, 1810);
-    			add_location(button, file$1, 91, 0, 1771);
+    			add_location(input1, file$1, 87, 0, 1665);
+    			add_location(br3, file$1, 89, 0, 1727);
+    			add_location(br4, file$1, 89, 4, 1731);
+    			add_location(strong, file$1, 93, 1, 1811);
+    			add_location(button, file$1, 92, 0, 1772);
     			set_style(div, "text-align", "center");
-    			add_location(div, file$1, 90, 0, 1736);
+    			add_location(div, file$1, 91, 0, 1737);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
