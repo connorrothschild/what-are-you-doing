@@ -27,7 +27,7 @@
 <article>
 
     <h1>
-      What are you doing <i>right now</i>?
+      What are you doing <span class = "rainbow-text">right now</span>?
     </h1>
 
     <h2>
@@ -97,10 +97,10 @@
     <p id = "introText"></p>
   </h2>
   <h2 style = "font-size:20px">
-  <span id = "activity_general_intro"></span><u><span style = "font-weight:400" id="activity_general"></span></u>
+  <span id = "activity_general_intro"></span><span class="rainbow-text" id="activity_general"></span>
   </h2>
   <h2 style = "font-size:16px">
-  <span id = "activity_specific_intro"></span><u><span style = "font-weight:400" id="activity_specific"></span></u>
+  <span id = "activity_specific_intro"></span><span class="rainbow-text" id="activity_specific"></span>
   <br>
   <span id="correct"></span>
   <h2 style = "font-size:20px" id="response"></h2>
@@ -220,7 +220,7 @@ applyFilter = function() {
       && d.sex === selected_sex.value
       && d.age_cat === selected_age.value
       && d.hispanic === selected_hispanic.value
-      && d.marriage === selected_marriage.value
+      && d.marriage === selected_marriage.value 
       && +d.hour === +currentHour
   }); 
 
@@ -232,15 +232,6 @@ applyFilter = function() {
   top_activities = data.slice(0,3);
   console.log(top_activities);
   console.log(data);
-  // console.log(numResults);
-  // console.log(selected_name.value);
-  // console.log(selected_sex.value);
-  // console.log(selected_age.value);
-  // console.log(selected_race.value);
-  // console.log(selected_hispanic.value);
-  // console.log(selected_marriage.value);
-  // console.log(currentHour);
-  // console.log(formatAMPM(new Date));
 
   var emptyName = function() {
     if(selected_name.value == "") {
@@ -336,12 +327,12 @@ applyFilter = function() {
     noFunction = function() {
       d3.select('#response')
       .html(function(d,i) {
-         return "<span style = 'font-size:16px'>I'm sorry. I'll try one more time.</span><hr>My next guess is that you're doing something related to <u><span style = 'font-weight:400'>" + top_activities[1].activity_general.toLowerCase() + '</span></u>.'
+         return "<span style = 'font-size:16px'>I'm sorry. I'll try one more time.</span><hr>My next guess is that you're doing something related to <span class='rainbow-text'>" + top_activities[1].activity_general.toLowerCase() + '</span>.'
         })
 
        d3.select('#attempt2') 
        .html(function(d,i) {   
-         return 'More specifically <u><span style = "font-weight:400">' + top_activities[1].activity_specific.toLowerCase() + '</span></u>.' +
+         return 'More specifically <span class="rainbow-text">' + top_activities[1].activity_specific.toLowerCase() + '</span>.' +
          '<br><br>Still wrong? Sorry. I actually still have <span style = "font-weight:400">' + (numResults-2) + "</span> guesses, but I'll spare you those details!" +
          '<br><span style = "font-size:10px">(Enough about you. Learn more about me on <a target="_blank" href = "https://connorrothschild.github.io">my personal website.</a>)</span>'
         })
