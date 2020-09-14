@@ -45,7 +45,7 @@ d3.csv(
 			});
 
 			// make box visible
-			document.getElementById('box').setAttribute('class', 'visible');
+			document.getElementById('box').setAttribute('display', 'block');
 
 			// filter the data
 			selected_race = document.getElementById('raceInput');
@@ -208,7 +208,7 @@ d3.csv(
 			noFunction = function() {
 				d3.select('#response').html(function(d, i) {
 					return (
-						"<span style = 'font-size:16px'>I'm sorry. I'll try one more time.</span><hr>My next guess is that you're doing something related to <span class='rainbow-text'>" +
+						"<span style = 'font-size:16px'>I'm sorry. I'll try one more time.</span><hr>My next guess is that you're doing something related to <span class='has-text-weight-semibold'>" +
 						top_activities[1].activity_general.toLowerCase() +
 						'</span>.'
 					);
@@ -216,7 +216,7 @@ d3.csv(
 
 				d3.select('#attempt2').html(function(d, i) {
 					return (
-						'More specifically <span class="rainbow-text">' +
+						'More specifically <span class="has-text-weight-semibold">' +
 						top_activities[1].activity_specific.toLowerCase() +
 						'</span>.' +
 						'<br><br>Still wrong? Sorry. I actually still have <span style = "font-weight:400">' +
