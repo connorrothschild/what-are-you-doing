@@ -1,344 +1,160 @@
 <!DOCTYPE html>
-    <meta charset="utf-8">
-    <title>What Are You Doing? | Connor Rothschild</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+<meta charset="utf-8">
+<title>What Are You Doing? | Connor Rothschild</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="author" content="Connor Rothschild" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 
-    <meta name="twitter:card" content="summary_large_image" >
-    <meta name="twitter:site" content="@CL_Rothschild" >
-    <meta name="twitter:creator" content="@CL_Rothschild" >
-    <meta name="twitter:title" content="What Are You Doing?" >
-    <meta name="twitter:description" content="I can guess!" >
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/connorrothschild/what-are-you-doing/master/images/thumbnail.jpg" >
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@CL_Rothschild">
+<meta name="twitter:creator" content="@CL_Rothschild">
+<meta name="twitter:title" content="What Are You Doing?">
+<meta name="twitter:description" content="I can guess!">
+<meta name="twitter:image"
+  content="https://raw.githubusercontent.com/connorrothschild/what-are-you-doing/master/images/thumbnail.jpg">
 
-    <link rel="icon" href="https://raw.githubusercontent.com/connorrothschild/connorrothschild.github.io/master/me/favicon.ico">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/blocks.css/dist/blocks.min.css" />
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+<link rel="icon"
+  href="https://raw.githubusercontent.com/connorrothschild/connorrothschild.github.io/master/me/favicon.ico">
+<link rel="stylesheet" href="styles.css">
+<script src="https://d3js.org/d3.v4.min.js"></script>
 
- <body>
+<body>
+  <script src="./script.js"></script>
 
-<meta name="author" content="Connor Rothschild"/>
+  <section class="hero is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title has-text-centered">
+          What are you doing <span class="rainbow-text">right now</span>?
+        </h1>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <h2 class="subtitle has-text-centered">
+          I can guess.
+        </h2>
 
-<article>
+  </section>
 
-    <h1>
-      What are you doing <span class = "rainbow-text">right now</span>?
-    </h1>
+  <section class="section">
+    <div class="content">
+      <p class="is-size-5">Using data from the American Time Use Survey, I'll match you to people who fit a similar
+        demographic
+        profile. Then, I'll guess what you're doing <i>right now.</i>
 
-    <h2>
-      
-    <span style = "font-weight:400">I can guess.</span> 
-    
-    Using data from the American Time Use Survey, I'll match you to people who fit a similar demographic profile. 
-    <br>Then, I'll guess what you're doing <i>right now.</i>
-    
-    <br><br> 
-    But first, can you tell me a little more about you?
+        <br>
+        But first, can you tell me a little more about you?
+      </p>
+    </div>
 
-    <hr>
-    Sure! My name is 
-    <input type="text" id="nameInput"></input>
+    <div class="content">
+      <div class="is-size-4 has-text-centered" style="line-height:2.25;">
+        Sure! My name is
+        <input type="text" id="nameInput" style="width: 200px;" class="input is-rounded is-medium mb-3">
 
-    I am a(n)
-      <select id="raceInput" class = "dropdown">
-          <option value=White>white</option>
-          <option value=Black>black</option>
-          <option value=Asian>Asian</option>
-          <option value='Native American'>Native American</option>
-          <option value='Mixed Race'>mixed race</option>
-      </select>
-  
-      <select id="sexInput" class = "dropdown">
-        <option value=Man>man</option>
-        <option value=Woman>woman</option>
-      </select>
+        <br>
 
-      of 
-      <select id="hispanicInput" class = "dropdown">
-          <option value=non-Hispanic>non-Hispanic</option>
-          <option value=Hispanic>Hispanic</option>
-      </select>
-      origin.
+        I am a(n)
+        <div class="select is-medium">
+          <select id="raceInput">
+            <option value=White>white</option>
+            <option value=Black>black</option>
+            <option value=Asian>Asian</option>
+            <option value='Native American'>Native American</option>
+            <option value='Mixed Race'>mixed race</option>
+          </select>
+        </div>
 
-      <br>
-      I'm currently between the ages of 
-      <select id="ageInput" class = "dropdown">
-          <option value='0 and 17'>0 and 17</option>
-          <option value='18 and 22'>18 and 22</option>
-          <option value='23 and 29'>23 and 29</option>
-          <option value='30 and 39'>30 and 39</option>
-          <option value='40 and 49'>40 and 49</option>
-          <option value='50 and 59'>50 and 59</option>
-          <option value='60+'>60+</option>
-        </select>
+        <div class="select is-medium">
+          <select id="sexInput">
+            <option value=Man>man</option>
+            <option value=Woman>woman</option>
+          </select>
+        </div>
 
-      and I am 
-      <select id="marriageInput" class = "dropdown">
-          <option value=Unmarried>unmarried</option>
-          <option value=Married>married</option>
-          <option value=Divorced>divorced</option>
-          <option value=Widowed>widowed</option>
-        </select>
-    .
-<br><br>
-    <!--thanks https://thesephist.github.io/blocks.css/ !-->
-    <button id="submitButton" class="block" type = "button" onclick="applyFilter()">Do your magic!</button>
-  </h2>
-  <br>
-      
-<div id = "box" class="boxed">
+        of
+        <div class="select is-medium">
+          <select id="hispanicInput">
+            <option value=non-Hispanic>non-Hispanic</option>
+            <option value=Hispanic>Hispanic</option>
+          </select>
+        </div>
+        origin.
 
-  <h2>
-    <p id = "introText"></p>
-  </h2>
-  <h2 style = "font-size:20px">
-  <span id = "activity_general_intro"></span><span class="rainbow-text" id="activity_general"></span>
-  </h2>
-  <h2 style = "font-size:16px">
-  <span id = "activity_specific_intro"></span><span class="rainbow-text" id="activity_specific"></span>
-  <br>
-  <span id="correct"></span>
-  <h2 style = "font-size:20px" id="response"></h2>
-  <h2 style = "font-size:16px" id="attempt2"></h2>
-  </h2>
+        <br>
+        I'm currently between the ages of
+        <div class="select is-medium">
+          <select id="ageInput">
+            <option value='0 and 17'>0 and 17</option>
+            <option value='18 and 22'>18 and 22</option>
+            <option value='23 and 29'>23 and 29</option>
+            <option value='30 and 39'>30 and 39</option>
+            <option value='40 and 49'>40 and 49</option>
+            <option value='50 and 59'>50 and 59</option>
+            <option value='60+'>60+</option>
+          </select>
+        </div>
 
-</div>
+        and I am
+        <div class="select is-medium">
+          <select id="marriageInput">
+            <option value=Unmarried>unmarried</option>
+            <option value=Married>married</option>
+            <option value=Divorced>divorced</option>
+            <option value=Widowed>widowed</option>
+          </select>
+        </div>
+        .
+      </div>
 
-<footer>
-  <b>Note: </b>
-  This app uses data from the American Time Use Survey recorded between 2011 and 2018. 
-  It computes the most popular activities for each demographic group <i>at a given time</i>.
-  Using that information, it outputs the most popular activities for a person of your demographic background, at the current time.
-  <br><br>
-  <b>Source: </b>
-  Sandra L. Hofferth, Sarah M. Flood and Matthew Sobek. <i>American Time Use Survey Data Extract Builder: Version 2.7 [dataset]</i>. College Park, MD: University of Maryland and Minneapolis, MN: IPUMS, 2018.
-    <a href = "https://doi.org/10.18128/D060.V2.7" target ="_blank">https://doi.org/10.18128/D060.V2.7</a>
-  <br><br>
-  <b>Who made this? </b>
-  Me, Connor Rothschild! Learn more about me <a target="_blank" href = "https://connorrothschild.github.io">here</a>.
-</footer>
+    </div>
+    <br><br>
 
-</article>
+    <div class="columns is-vcentered">
+      <div class="column is-one-fifth">
+        <button id="submitButton" class="button is-success is-large" type="button" onclick="applyFilter()">Do your
+          magic!</button>
+      </div>
+
+      <div class="column">
+
+        <div class="box">
+
+          <div id="box">
+            <h2>
+              <p id="introText"></p>
+            </h2>
+            <h2 style="font-size:20px">
+              <span id="activity_general_intro"></span><span class="rainbow-text" id="activity_general"></span>
+            </h2>
+            <h2 style="font-size:16px">
+              <span id="activity_specific_intro"></span><span class="rainbow-text" id="activity_specific"></span>
+              <br>
+              <span id="correct"></span>
+              <h2 style="font-size:20px" id="response"></h2>
+              <h2 style="font-size:16px" id="attempt2"></h2>
+            </h2>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 </body>
 
-<script>
-
-// create a variable that will hold the loaded data
-var csv;
-
-// define all objects/vars/etc.
-var selected_name;
-var selected_race;
-var selected_sex;
-var selected_age;
-var selected_marriage;
-var selected_hispanic;
-var today;
-var time;
-var data;
-var currentHour;
-var top_activities;
-var numResults;
-var applyFilter;
-var yesFunction;
-var noFunction;
-
-// load the data
-d3.csv("./data/activity_data.csv", function(d) {
-  
-  return d;
-
-}, function(error, datafile) {
-  if (error) throw error;
-
-  // put the original data in csv
-  csv = datafile;
-  console.log(csv);
-
-// call this whenever the submit button is clicked
-applyFilter = function() {
-
-  // remove prior text boxes, if present
-  d3.select('#response')
-  .html(function(d,i) {   
-         return null
-       })
-  d3.select('#correct') 
-  .html(function(d,i) {   
-         return null
-       })
-  d3.select('#attempt2') 
-  .html(function(d,i) {   
-         return null
-       })
-
-  // make box visible
-  document.getElementById('box').setAttribute("class", "boxedVisible");
-
-  // filter the data
-  selected_race = document.getElementById('raceInput');
-  selected_sex = document.getElementById('sexInput');
-  selected_age = document.getElementById('ageInput');
-  selected_name = document.getElementById('nameInput');
-  selected_marriage = document.getElementById('marriageInput');
-  selected_hispanic = document.getElementById('hispanicInput');
-
-  function formatAMPM(date) {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? 'pm' : 'am';
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? '0'+minutes : minutes;
-    var strTime = hours + ':' + minutes + ' ' + ampm;
-    return strTime;
-  }
-
-  function returnHour(date) {
-    var hour = date.getHours();
-    return hour
-  }
-
-  currentHour = returnHour(new Date);
-
-// test
-  // data = csv.filter(function(d) {
-  //   return d.race_general === "White only" 
-  //       && d.sex === "Female" 
-  //       && d.age_cat === "60 or over"
-  //       && d.hour === "18"});
-
-// for real:
-  data = csv.filter(function(d) {
-  return d.race_general === selected_race.value
-      && d.sex === selected_sex.value
-      && d.age_cat === selected_age.value
-      && d.hispanic === selected_hispanic.value
-      && d.marriage === selected_marriage.value 
-      && +d.hour === +currentHour
-  }); 
-
-  data = data.sort(function(a, b) {
-    return d3.descending(+a.n, +b.n)
-  });
-
-  numResults = +data.length;
-  top_activities = data.slice(0,3);
-  console.log(top_activities);
-  console.log(data);
-
-  var emptyName = function() {
-    if(selected_name.value == "") {
-      return "friend" 
-    } else {return selected_name.value}
-  }
-
-  var marriagePronoun = function(value) {
-    if(selected_marriage.value == "Unmarried") {return "an "} else {return "a " }
-  };
-
-  function toTitleCase(str) {
-        return str.replace(
-            /\w\S*/g,
-            function(txt) {
-                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-            }
-        );
-    }
-
-    d3.select("#introText")
-      .html(function(d,i) {
-        if(numResults == 0) {
-          return "I'm sorry. There is no data to compare you with. In other words, you're one of a kind!"
-        } else {
-         return 'Hi ' + toTitleCase(emptyName(selected_name.value)) + '!' +
-         '<br><br>' + 
-         'You are ' + marriagePronoun(selected_marriage.value) + '<span style = "font-weight:500">' + selected_marriage.value.toLowerCase() + ' ' + selected_race.value.toLowerCase() + ' ' + selected_sex.value.toLowerCase() +
-         '</span> between the ages of <span style = "font-weight:500">' + selected_age.value + "</span> (like you didn't know that already)." +
-         '<br><br> The current time is <span style = "font-weight:500">' + formatAMPM(new Date) + '</span>.' + '<hr>';
-      }
-    })
-
-    d3.select("#activity_general_intro")
-      .html(function(d,i) {
-      if(numResults == 0) {
-          return null
-        } else {
-        return "Are you currently doing something related to "
-        }
-      })
-
-    d3.select("#activity_specific_intro")
-    .html(function(d,i) {
-    if(numResults == 0) {
-        return null
-      } else {
-      return "More specifically, my best guess would be: "
-      }
-    })
-
-    d3.select("#activity_general")
-      .html(function(d,i) {
-      if(numResults == 0) {
-          return null
-        } else {
-         return top_activities[0].activity_general.toLowerCase() + '?'
-      }
-      })
-
-    d3.select("#activity_specific")
-      .html(function(d,i) {
-      if(numResults == 0) {
-          return null
-        } else {
-         return top_activities[0].activity_specific.toLowerCase() + '.'
-      }
-      })
-
-    d3.select("#correct")
-    .html(function(d,i) {
-      if(numResults == 0) {
-          return null
-        } else {
-         return '<br>Did I get it right?' +
-         '<button id="yesButton" class="inline block themedGreen" type = "button" onclick="yesFunction()">Yes!</button>' +
-         '<button id="noButton" class="inline block themedRed" type = "button" onclick="noFunction()">No!</button>'
-    }
-    })
-
-    yesFunction = function() {
-      d3.select('#response')
-      .html(function(d,i) {
-         return "<span style = 'font-size:16px'>Great! Keep doing what you're doing. You're great at it!</span><br><span style = 'font-size:10px'>(Enough about you. Learn more about me on <a target='_blank' href = 'https://connorrothschild.github.io'>my personal website.</a>)</span>"
-       })
-
-       d3.select('#attempt2') 
-       .html(function(d,i) {   
-         return null
-       })
-    }
-    
-    noFunction = function() {
-      d3.select('#response')
-      .html(function(d,i) {
-         return "<span style = 'font-size:16px'>I'm sorry. I'll try one more time.</span><hr>My next guess is that you're doing something related to <span class='rainbow-text'>" + top_activities[1].activity_general.toLowerCase() + '</span>.'
-        })
-
-       d3.select('#attempt2') 
-       .html(function(d,i) {   
-         return 'More specifically <span class="rainbow-text">' + top_activities[1].activity_specific.toLowerCase() + '</span>.' +
-         '<br><br>Still wrong? Sorry. I actually still have <span style = "font-weight:400">' + (numResults-2) + "</span> guesses, but I'll spare you those details!" +
-         '<br><span style = "font-size:10px">(Enough about you. Learn more about me on <a target="_blank" href = "https://connorrothschild.github.io">my personal website.</a>)</span>'
-        })
-    }
-
-  };
-  });
-
-  </script>
+<div class='footer'>
+  <b>Note: </b>
+  This app uses data from the American Time Use Survey recorded between 2011 and 2018.
+  It computes the most popular activities for each demographic group <i>at a given time</i>.
+  Using that information, it outputs the most popular activities for a person of your demographic background, at the
+  current time.
+  <br><br>
+  <b>Source: </b>
+  Sandra L. Hofferth, Sarah M. Flood and Matthew Sobek. <i>American Time Use Survey Data Extract Builder: Version 2.7
+    [dataset]</i>. College Park, MD: University of Maryland and Minneapolis, MN: IPUMS, 2018.
+  <a href="https://doi.org/10.18128/D060.V2.7" target="_blank">https://doi.org/10.18128/D060.V2.7</a>
+  <br><br>
+  <b>Who made this? </b>
+  Me, Connor Rothschild! Learn more about me <a target="_blank" href="https://connorrothschild.github.io">here</a>.
+</div>

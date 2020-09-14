@@ -1,45 +1,39 @@
-@import url('https://rsms.me/inter/inter.css');
-html {
-	font-family: 'Inter', sans-serif;
-}
-@supports (font-variation-settings: normal) {
-	html {
-		font-family: 'Inter var', sans-serif;
-	}
-}
-
 .rainbow-text {
+	background-image: -o-repeating-linear-gradient(45deg, violet, indigo, blue, green, orange, red, violet);
 	background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, orange, red, violet);
 	-webkit-background-clip: text;
 	background-size: 800% 800%;
 	-webkit-text-fill-color: transparent;
+	-webkit-animation: rainbow 7s ease infinite;
 	animation: rainbow 7s ease infinite;
+}
+
+@-webkit-keyframes rainbow {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 25%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 @keyframes rainbow {
 	0% {
 		background-position: 0% 50%;
 	}
+
 	50% {
 		background-position: 100% 25%;
 	}
+
 	100% {
 		background-position: 0% 50%;
 	}
-}
-
-h1 {
-	font: 400 2em "Inter";
-	text-align: left;
-	margin-left: 2%;
-}
-
-h2 {
-	font: 200 1em "Inter";
-	text-align: left;
-	margin-right: 2%;
-	margin-left: 2%;
-	line-height: 1.5em;
 }
 
 a {
@@ -54,39 +48,6 @@ a {
 	--block-background-color: #90ee90;
 }
 
-.dropdown {
-	text-align-last: center;
-	font-size: .9em;
-	color: black;
-	border: none;
-	border-bottom: 1.5px solid grey;
-	background-color: white;
-}
-
-footer {
-	font: 200 .7em "Inter";
-	text-align: left;
-	margin-top: 2em;
-	border-style: solid;
-	border-width: 1px 0px 0px 0px;
-	padding: 8px 0px 0px 6px;
-}
-
-.boxed {
-	border: 1px solid black;
-	margin-left: 2%;
-	margin-right: 2%;
-	padding-top: 2.5%;
-	padding-bottom: 2.5%;
-	opacity: 0;
-}
-
-.boxedVisible {
-	border: 1px solid black;
-	background-color: #f2f1ec;
-	margin-left: 2%;
-	margin-right: 2%;
-	padding-top: 1.5%;
-	padding-bottom: 1.5%;
-	opacity: 1;
+.visible {
+	display: block;
 }
